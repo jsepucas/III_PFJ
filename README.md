@@ -78,9 +78,9 @@ Este repositorio contiene los siguientes archivos:
 - *Parte I: Conceptos y Teoría*: Documentación sobre los conceptos teóricos tratados en el examen.
 - *Parte II: Práctica con Cisco Packet Tracer*: Archivos .pkt de Packet Tracer con las topologías y configuraciones de cada ejercicio.
 - *Documentación Adicional en JavaScript*: 
-  - *index.js*: Documento que sirve como presentación técnica de los ejercicios. Contiene una estructura dinámica y detallada con interacciones basadas en JavaScript.
+  - *app.js*: Documento que sirve como presentación técnica de los ejercicios. Contiene una estructura dinámica y detallada con interacciones basadas en JavaScript.
   - *styles.css*: Estilos personalizados para la presentación del documento.
-  - *pages.html*: Página adicional explicativa con el contenido detallado de cada ejercicio.
+  - *index.html*: Página adicional explicativa con el contenido detallado de cada ejercicio.
 
 Puedes abrir el archivo index.js para ver la documentación completa en formato web. El archivo JavaScript agrega interactividad al documento, proporcionando un entorno más dinámico para revisar las configuraciones y resultados. El contenido de *Pages* está organizado de manera visual y explicativa para mejorar la comprensión.
 
