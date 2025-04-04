@@ -69,12 +69,81 @@
         <div class="toggle">
             <button onclick="toggleContent('ej1')">Ejercicio 1: Ruta Perdida entre Dos Reinos</button>
             <div id="ej1" class="contenido">
-                <p>Pendiente de introducir contenido técnico. Asegúrate de incluir el esquema, dirección IP y configuración de rutas estáticas entre routers.</p>
+                <p><strong>Documentación Técnica:</strong> Reconstrucción de Redes en las Ciudades Perdidas</p>
+                <p><strong>Introducción:</strong> En este ejercicio, restauramos la conexión entre dos ciudades separadas por un desierto, utilizando Cisco Packet Tracer. Configuramos una red que conecta ambas ciudades a través de un enlace WAN, creando una topología robusta usando routers, switches, dispositivos finales y una nube WAN con Frame Relay.</p>
+                <img src="topologia-ejercicio1.png" alt="Topología general ejercicio 1 - Conexión entre dos ciudades" style="max-width:100%; margin: 1rem 0; border-radius: 8px; border: 1px solid #ccc;" />
+                <p><strong>Topología de la Red:</strong></p>
+                <ul>
+                    <li>Router A (Ciudad A) y Router B (Ciudad B) conectados por un enlace WAN</li>
+                    <li>Switches en cada ciudad para gestionar las redes LAN</li>
+                    <li>Dispositivos finales (laptops, tablets, PCs) conectados a los switches</li>
+                    <li>Cloud PT simulando una nube con conexión Frame Relay</li>
+                </ul>
+                <p><strong>Equipos y Enlaces Principales:</strong></p>
+                <ul>
+                    <li><strong>Router A (Cisco 1841):</strong>
+                        <ul>
+                            <li>FastEthernet0/0: 192.168.10.1/24 (LAN Ciudad A)</li>
+                            <li>Serial0/1/0: 192.168.30.1/30 (WAN a Router B)</li>
+                            <li>Ruta estática: <pre><code>ip route 192.168.20.0 255.255.255.0 192.168.30.2</code></pre></li>
+                        </ul>
+                    </li>
+                    <li><strong>Router B (Cisco 1841):</strong>
+                        <ul>
+                            <li>FastEthernet0/0: 192.168.20.1/24 (LAN Ciudad B)</li>
+                            <li>Serial0/1/0: 192.168.30.2/30 (WAN a Router A)</li>
+                            <li>Ruta estática: <pre><code>ip route 192.168.10.0 255.255.255.0 192.168.30.1</code></pre></li>
+
+                        </ul>
+                    </li>
+                    <li><strong>Cloud PT (Nube WAN):</strong> Frame Relay entre ambos routers con DLCIs 100 y 200</li>
+                </ul>
+                <p><strong>Configuración de la Nube WAN:</strong> Se configuró Frame Relay con los siguientes comandos:</p>
+                <pre>
+interface Serial0/1/0
+
+ encapsulation frame-relay
+  </pre>
+                <p>Asignación de DLCI:
+                <ul>
+                    <li>Router A: DLCI 100</li>
+                    <li>Router B: DLCI 200</li>
+                </ul>
+                </p>
+                <p><strong>Configuración de Switches:</strong> Cada ciudad tiene un switch configurado con una VLAN:</p>
+                <ul>
+                    <li>Ciudad A: VLAN 10</li>
+                    <li>Ciudad B: VLAN 20</li>
+                </ul>
+                <p>Las interfaces del switch fueron asignadas como access y vinculadas a sus respectivas VLANs.</p>
+                <p><strong>Configuración de Dispositivos Finales:</strong></p>
+                <ul>
+                    <li><strong>Ciudad A:</strong>
+                        <ul>
+                            <li>Laptop A: 192.168.10.13</li>
+                            <li>Tablet A: 192.168.10.14</li>
+                            <li>PC A1: 192.168.10.10</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ciudad B:</strong>
+                        <ul>
+                            <li>Laptop B: 192.168.20.13</li>
+                            <li>Tablet B: 192.168.20.14</li>
+                            <li>PC B4: 192.168.20.10</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><strong>Verificación de Conectividad:</strong> Se realizaron pruebas de ping entre dispositivos de ambas ciudades. Los resultados fueron exitosos, lo que indica que la comunicación entre las dos LAN está funcionando correctamente.</p>
+                <p><strong>Capturas de Pantalla:</strong></p>
+                <!-- Aquí insertaremos las capturas una a una -->
+                <p><strong>Conclusión:</strong> Tras la implementación de la red completa con routers, switches, VLANs y Frame Relay, la conectividad entre Ciudad A y Ciudad B quedó restaurada. La configuración estática y la simulación de WAN fueron efectivas.</p>
             </div>
 
             <button onclick="toggleContent('ej2')">Ejercicio 2: Ciudad de las Redes Aisladas</button>
             <div id="ej2" class="contenido">
                 <p><strong>Documentación Técnica:</strong> Restauración de las Redes de la Ciudad Perdida</p>
+                <p><strong>Introducción: </strong> En este ejercicio, como parte de la misión para restaurar las redes de una antigua ciudad, se configuró una infraestructura de red segmentada utilizando VLANs y un router-on-a-stick. El objetivo era devolver la comunicación entre las diferentes facciones de la ciudad, que estaban aisladas en VLANs distintas. A través de esta reconstrucción, se restableció la conexión entre los gremios de Arquitectos, Escribas y Alquimistas, permitiendo la comunicación entre ellos a través de un router Cisco 1941 y un switch Cisco 2960. </p>
+                <img src="topologia-ejercicio2.png" alt="Topología VLANs Router-on-a-Stick" style="max-width:100%; margin-bottom:1rem; border: 1px solid #ccc; border-radius: 8px;" />
                 <p><strong>Equipos Utilizados:</strong></p>
                 <ul>
                     <li>Router Cisco 1941</li>
