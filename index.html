@@ -1,16 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Paginadeprueba</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="styles.css">"
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/solid.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen de Redes II - En Busca de la Red Perdida</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
 </head>
 <body>
-<h1>Hola, esto es una página de prueba</h1>
+<header>
+    <h1>🌐 Examen de Redes II</h1>
+    <p>En busca de la red perdida</p>
+    <nav>
+        <ul>
+            <li><a href="#teoria">Parte I: Teoría</a></li>
+            <li><a href="#practica">Parte II: Práctica</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="intro" class="card">
+        <h2>📜 Introducción</h2>
+        <p>Bienvenido, explorador tecnológico. Estás por sumergirte en una aventura narrativa y técnica para demostrar tus conocimientos en redes.</p>
+    </section>
+
+    <section id="teoria" class="card">
+        <h2>🔍 Parte I: Conceptos y Teoría</h2>
+        <div class="toggle">
+            <button onclick="toggleContent('mural')">1. El Mural de las Siete Capas</button>
+            <div id="mural" class="contenido">
+                <p>Este ejercicio se refiere al modelo OSI. Cada franja representa una de sus capas:</p>
+                <ul>
+                    <li><strong>Capa 7:</strong> Aplicación</li>
+                    <li><strong>Capa 6:</strong> Presentación</li>
+                    <li><strong>Capa 5:</strong> Sesión</li>
+                    <li><strong>Capa 4:</strong> Transporte</li>
+                    <li><strong>Capa 3:</strong> Red</li>
+                    <li><strong>Capa 2:</strong> Enlace de datos</li>
+                    <li><strong>Capa 1:</strong> Física</li>
+                </ul>
+            </div>
+
+            <button onclick="toggleContent('mensajeros')">2. Los Dos Pergaminos del Mensajero</button>
+            <div id="mensajeros" class="contenido">
+                <p>El mensajero confiable representa el protocolo TCP, mientras que el veloz representa UDP. TCP es fiable, orientado a conexión, pero más lento. UDP es más rápido, pero puede perder paquetes.</p>
+            </div>
+
+            <button onclick="toggleContent('subredes')">3. El Enigma de las Subredes</button>
+            <div id="subredes" class="contenido">
+                <p>Dividir 192.168.50.0 en 4 subredes implica usar una máscara /26 (255.255.255.192), que da 64 direcciones por subred, de las cuales 62 son utilizables.</p>
+            </div>
+
+            <button onclick="toggleContent('rutas')">4. La Encrucijada de las Rutas</button>
+            <div id="rutas" class="contenido">
+                <p>El tótem representa una tabla de enrutamiento. Las flechas fijas son rutas estáticas; las móviles, rutas dinámicas aprendidas por protocolos como OSPF o RIP.</p>
+            </div>
+
+            <button onclick="toggleContent('nat')">5. El Guardián de la Máscara Única</button>
+            <div id="nat" class="contenido">
+                <p>Este guardián simboliza el NAT (Traducción de Direcciones de Red). Permite que varios dispositivos compartan una sola IP pública, ocultando sus direcciones privadas. Beneficios: seguridad y ahorro de direcciones públicas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="practica" class="card">
+        <h2>🛠 Parte II: Práctica con Cisco Packet Tracer</h2>
+        <div class="toggle">
+            <button onclick="toggleContent('ej1')">Ejercicio 1: Ruta Perdida entre Dos Reinos</button>
+            <div id="ej1" class="contenido">
+                <p>Pendiente de introducir contenido técnico. Asegúrate de incluir el esquema, dirección IP y configuración de rutas estáticas entre routers.</p>
+            </div>
+
+            <button onclick="toggleContent('ej2')">Ejercicio 2: Ciudad de las Redes Aisladas</button>
+            <div id="ej2" class="contenido">
+                <p><strong>Documentación Técnica:</strong> Restauración de las Redes de la Ciudad Perdida</p>
+                <p><strong>Equipos Utilizados:</strong></p>
+                <ul>
+                    <li>Router Cisco 1941</li>
+                    <li>Switch Cisco 2960</li>
+                    <li>PCs Genéricos asignados a diferentes VLANs</li>
+                </ul>
+                <p><strong>VLANs y Subredes:</strong></p>
+                <ul>
+                    <li>VLAN 10 (Arquitectos): 192.168.10.0/24</li>
+                    <li>VLAN 20 (Escribas): 192.168.20.0/24</li>
+                    <li>VLAN 30 (Alquimistas): 192.168.30.0/24</li>
+                </ul>
+                <p><strong>Direcciones IP:</strong></p>
+                <ul>
+                    <li>Arquitectos: PC1 (.2), PC2 (.3), PC3 (.4)</li>
+                    <li>Escribas: PC4 (.2), PC5 (.3), PC6 (.4)</li>
+                    <li>Alquimistas: PC7 (.2), PC8 (.3)</li>
+                </ul>
+                <p><strong>Router - Subinterfaces:</strong></p>
+                <pre>
+interface Fa0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+
+interface Fa0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+ no shutdown
+
+interface Fa0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.30.1 255.255.255.0
+ no shutdown
+          </pre>
+                <p><strong>Switch - Configuración:</strong></p>
+                <pre>
+vlan 10
+ name Arquitectos
+exit
+vlan 20
+ name Escribas
+exit
+vlan 30
+ name Alquimistas
+exit
+
+interface range fa0/2 - 4
+ switchport mode access
+ switchport access vlan 10
+exit
+
+interface range fa0/5 - 7
+ switchport mode access
+ switchport access vlan 20
+exit
+
+interface range fa0/8 - 9
+ switchport mode access
+ switchport access vlan 30
+exit
+
+interface fa0/1
+ switchport mode trunk
+exit
+          </pre>
+                <p><strong>Verificación de Conectividad:</strong> Se realizaron pings exitosos entre PCs de la misma VLAN y entre VLANs distintas, confirmando la funcionalidad del enrutamiento inter-VLAN.</p>
+                <p><strong>Capturas de Pantalla:</strong></p>
+                <img src="captura-pc1-pc4.png" alt="Ping de 192.168.10.2 a 192.168.10.4" style="max-width:100%; margin-bottom:1rem;" />
+                <img src="captura-pc4-pc2.png" alt="Ping de 192.168.20.2 a 192.168.10.2" style="max-width:100%; margin-bottom:1rem;" />
+                <p><strong>Conclusión:</strong> La configuración de Router-on-a-Stick fue exitosa. La ciudad digital ha sido restaurada, y los gremios se comunican sin interferencias.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>🧾 Recomendaciones y Entrega</h2>
+        <p>Recuerda entregar tu repositorio en GitHub con los archivos <code>.pkt</code>, un README bien documentado y toda la narrativa técnica.</p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 - Proyecto en colaboración con Cisco Packet Tracer</p>
+</footer>
 </body>
 </html>
