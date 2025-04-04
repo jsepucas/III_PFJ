@@ -2,7 +2,7 @@
 
 
 
-# Examen de Redes II – En Busca de la Red Perdida
+# Examen de Redes I – En Busca de la Red Perdida
 
 Este repositorio contiene la documentación y archivos correspondientes a los ejercicios del examen de Redes II. Toda la información está explicada de manera correcta, desarrollada y explayada en el documento de *Pages*. Sin embargo, a continuación encontrarás una descripción breve de cada ejercicio y un enlace a la documentación adicional en formato JavaScript.
 
