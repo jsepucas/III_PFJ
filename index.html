@@ -133,9 +133,12 @@ interface Serial0/1/0
                         </ul>
                     </li>
                 </ul>
-                <p><strong>Verificación de Conectividad:</strong> Se realizaron pruebas de ping entre dispositivos de ambas ciudades. Los resultados fueron exitosos, lo que indica que la comunicación entre las dos LAN está funcionando correctamente.</p>
                 <p><strong>Capturas de Pantalla:</strong></p>
-                <!-- Aquí insertaremos las capturas una a una -->
+                <p><strong>Ping desde PC A a PC B:</strong></p>
+                <img src="captura-pca-pcb.png" alt="Ping desde Ciudad A a Ciudad B" style="max-width:100%; margin-bottom:1rem; border: 1px solid #ccc; border-radius: 8px;" />
+                <p><strong>Ping entre Tablet de Ciudad B y Laptop de Ciudad A:</strong></p>
+                <img src="captura-tablet-b-laptop-a.png" alt="Ping entre Ciudad B y Ciudad A" style="max-width:100%; margin-bottom:1rem; border: 1px solid #ccc; border-radius: 8px;" />
+
                 <p><strong>Conclusión:</strong> Tras la implementación de la red completa con routers, switches, VLANs y Frame Relay, la conectividad entre Ciudad A y Ciudad B quedó restaurada. La configuración estática y la simulación de WAN fueron efectivas.</p>
             </div>
 
@@ -212,7 +215,9 @@ exit
           </pre>
                 <p><strong>Verificación de Conectividad:</strong> Se realizaron pings exitosos entre PCs de la misma VLAN y entre VLANs distintas, confirmando la funcionalidad del enrutamiento inter-VLAN.</p>
                 <p><strong>Capturas de Pantalla:</strong></p>
+                <p><strong>Ping en la misma VLAN (Arquitectos)</strong></p>
                 <img src="captura-pc1-pc4.png" alt="Ping de 192.168.10.2 a 192.168.10.4" style="max-width:100%; margin-bottom:1rem;" />
+                <p><strong>Ping entre VLANes distintas</strong></p>
                 <img src="captura-pc4-pc2.png" alt="Ping de 192.168.20.2 a 192.168.10.2" style="max-width:100%; margin-bottom:1rem;" />
                 <p><strong>Conclusión:</strong> La configuración de Router-on-a-Stick fue exitosa. La ciudad digital ha sido restaurada, y los gremios se comunican sin interferencias.</p>
             </div>
