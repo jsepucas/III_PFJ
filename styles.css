@@ -7,10 +7,12 @@ body {
 }
 
 header {
-    background-color: #1f2937;
-    color: white;
-    padding: 0.75rem 0;
-    text-align: center;
+    background-image: url('FondoHeader.JPG');
+    background-size: cover;  /* Asegura que la imagen cubra todo el header */
+    background-position: center center;  /* Centra la imagen */
+    color: white;  /* Para que el texto sea visible sobre la imagen */
+    padding: 2rem 0;  /* Aumenta el espacio interno si es necesario */
+    text-align: center;  /* Centra el texto */
 }
 
 nav ul {
@@ -23,7 +25,7 @@ nav ul {
 }
 
 nav a {
-    color: #60a5fa;
+    color: #021b36;
     text-decoration: none;
     font-weight: bold;
 }
