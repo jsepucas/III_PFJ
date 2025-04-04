@@ -114,8 +114,83 @@
 
             <button onclick="toggleContent('subredes')">3. El Enigma de las Subredes</button>
             <div id="subredes" class="contenido">
-                <p>Dividir 192.168.50.0 en 4 subredes implica usar una máscara /26 (255.255.255.192), que da 64 direcciones por subred, de las cuales 62 son utilizables.</p>
+                <p>Avanzando por un pasillo, encuentras una losa de piedra con inscripciones que parecen ser direcciones numéricas. Una inscripción cuenta: "Nuestro reino digital tenía la dirección sagrada 192.168.50.0. Los cuatro grandes gremios de la ciudad exigían su propio distrito en la red, todos de igual tamaño". Junto a esto, ves un diagrama borroso de algo que parecen ser subredes emanando de la dirección principal, cada una con su propio identificador.</p>
+
+                <p><strong>Pregunta:</strong> Descifra el enigma de la losa. Si la antigua red usaba la dirección 192.168.50.0 como base y necesitaba dividirse en 4 subredes de igual tamaño, ¿qué máscara de subred habrían utilizado los antiguos para lograrlo? ¿Cuántas direcciones de host (utilizables) tendría cada subred resultante? Explica brevemente tu razonamiento al calcular la máscara.</p>
+
+                <h3>Tras descifrar el enigma descubrimos lo siguiente:</h3>
+                <p>Dirección de red principal ➞ 192.168.50.0/24, lo que indica que la red tiene una máscara de subred de 255.255.255.0, la cual permite tener hasta 254 direcciones de host en total.</p>
+                <p>Como nos señala el enunciado, necesitamos dividir esta red en cuatro subredes de igual tamaño. Esto significa que necesitamos utilizar bits del campo de host para generar más subredes.</p>
+
+                <h3>Cálculo de la máscara de subred:</h3>
+                <p>La red original tiene una máscara /24, es decir, 24 bits para la red.</p>
+                <p>Para crear las 4 subredes, necesitamos 2 bits adicionales.</p>
+                <p>2<sup>2</sup> = 4 subredes.</p>
+                <p>Al tomar 2 bits del campo de host, la nueva máscara será /26, es decir:</p>
+                <p><strong>Máscara de subred:</strong> 255.255.255.192</p>
+
+                <h3>Cálculo de direcciones de host por subred:</h3>
+                <p>La máscara /26 deja 6 bits para los hosts.</p>
+                <p>32 - 26 = 6 bits.</p>
+                <p>El número total de direcciones de host posibles:</p>
+                <p>2<sup>6</sup> = 64 direcciones.</p>
+                <p>Sin embargo, 2 direcciones de cada subred se utilizan para la dirección de red y la dirección de broadcast, por lo que las direcciones de host utilizables serán:</p>
+                <p>64 - 2 = 62 direcciones utilizables por subred.</p>
+
+                <h3>Subredes resultantes:</h3>
+                <table>
+                    <tr>
+                        <th>Subred</th>
+                        <th>Dirección de Red</th>
+                        <th>Rango de Hosts</th>
+                        <th>Dirección de Broadcast</th>
+                        <th>Número de Hosts Utilizables</th>
+                    </tr>
+                    <tr>
+                        <td>Subred 1</td>
+                        <td>192.168.50.0/26</td>
+                        <td>192.168.50.1 a 192.168.50.62</td>
+                        <td>192.168.50.63</td>
+                        <td>62</td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td>Subred 2</td>
+                        <td>192.168.50.64/26</td>
+                        <td>192.168.50.65 a 192.168.50.126</td>
+                        <td>192.168.50.127</td>
+                        <td>62</td>
+                    </tr>
+                    <tr>
+                        <td>Subred 3</td>
+                        <td>192.168.50.128/26</td>
+                        <td>192.168.50.129 a 192.168.50.190</td>
+                        <td>192.168.50.191</td>
+                        <td>62</td>
+                    </tr>
+                    <tr>
+                        <td>Subred 4</td>
+                        <td>192.168.50.192/26</td>
+                        <td>192.168.50.193 a 192.168.50.254</td>
+                        <td>192.168.50.255</td>
+                        <td>62</td>
+                    </tr>
+                </table>
+
+                <h3>Explicación de términos:</h3>
+                <ul>
+                    <li><strong>Dirección de Red:</strong> La primera dirección de cada subred, que no se puede asignar a un host.</li>
+                    <li><strong>Rango de Hosts:</strong> El rango de direcciones utilizables para asignar a los dispositivos dentro de cada subred.</li>
+                    <li><strong>Dirección de Broadcast:</strong> La última dirección de cada subred, usada para enviar mensajes a todos los dispositivos de esa subred.</li>
+                    <li><strong>Número de Hosts Utilizables:</strong> El total de direcciones que pueden asignarse a los dispositivos dentro de la subred, excluyendo la dirección de red y la de broadcast.</li>
+                </ul>
+
+                <h3>Diagrama de las Subredes:</h3>
+                <img src="EstructuraSubredes.png" alt="Diagrama de subredes" style="max-width:100%; margin-bottom:1rem; border: 1px solid #ccc; border-radius: 8px;" />
             </div>
+
 
             <button onclick="toggleContent('rutas')">4. La Encrucijada de las Rutas</button>
             <div id="rutas" class="contenido">
