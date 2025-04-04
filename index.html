@@ -54,7 +54,7 @@
                 </ul>
             </div>
 
-            <button onclick="toggleContent('mensajeros')">Ejercicio 2: Los Dos Pergaminos del Mensajero</button>
+            <button onclick="toggleContent('mensajeros')">2. Los Dos Pergaminos del Mensajero</button>
             <div id="mensajeros" class="contenido">
                 <h3>Interpretación del Ejercicio: Los Dos Pergaminos del Mensajero</h3>
                 <p>El enunciado describe dos rituales: el Mensajero Confiable y el Mensajero Veloz. Cada uno representa diferentes enfoques de transmisión de datos, y se pide que los interpretes como protocolos de comunicación en redes modernas.</p>
@@ -194,13 +194,89 @@
 
             <button onclick="toggleContent('rutas')">4. La Encrucijada de las Rutas</button>
             <div id="rutas" class="contenido">
-                <p>El tótem representa una tabla de enrutamiento. Las flechas fijas son rutas estáticas; las móviles, rutas dinámicas aprendidas por protocolos como OSPF o RIP.</p>
+                <p>El tótem representa una <strong>tabla de enrutamiento</strong>. Las flechas fijas son rutas estáticas; las móviles, rutas dinámicas aprendidas por protocolos como OSPF o RIP.</p>
+
+                <h3>¿Qué es una tabla de enrutamiento?</h3>
+                <p>En redes modernas, la tabla de enrutamiento es una lista que contiene las rutas (direcciones) que un router utiliza para enviar paquetes hacia su destino. Cada vez que un paquete llega a un router, este consulta su tabla de enrutamiento para decidir la mejor ruta hacia el siguiente salto.</p>
+                <p>Dependiendo de cómo se haya configurado el router, este puede elegir entre rutas <strong>estáticas</strong> (preconfiguradas manualmente) o rutas <strong>dinámicas</strong> (calculadas automáticamente en tiempo real mediante protocolos de enrutamiento).</p>
+
+                <h3>Enrutamiento Estático vs Enrutamiento Dinámico</h3>
+                <p>El enrutamiento estático y dinámico se diferencian principalmente en la forma en que gestionan las rutas y cómo reaccionan ante cambios en la topología de la red.</p>
+
+                <h4>Enrutamiento Estático <em>(Flechas Talladas en Piedra)</em></h4>
+                <p>Las rutas estáticas se configuran manualmente y no cambian a menos que un administrador las modifique. Son fijas e inmutables, como las flechas talladas en piedra en el tótem.</p>
+
+                <h5>Ventajas:</h5>
+                <ul>
+                    <li>No depende de factores externos, por lo que las rutas son predecibles y confiables.</li>
+                    <li>No requiere recursos adicionales, ya que no hay cálculos para encontrar rutas en tiempo real.</li>
+                    <li>Es ideal para redes pequeñas o cuando el tráfico es estable y no cambia.</li>
+                </ul>
+
+                <h5>Desventajas:</h5>
+                <ul>
+                    <li>Si hay un enlace caído o se realiza un cambio en la red, debe modificarse manualmente.</li>
+                    <li>Es difícil de administrar en redes grandes, ya que las rutas deben configurarse individualmente.</li>
+                </ul>
+                <img src="EnrutamientoEstatico.png" alt="EnrEstat" style="max-width:100%; margin-bottom:1rem; border: 1px solid #ccc; border-radius: 8px;" />
+
+                <h4>Enrutamiento Dinámico <em>(Flechas Móviles)</em></h4>
+                <p>Las flechas móviles representan rutas dinámicas que se ajustan automáticamente en función de las condiciones cambiantes de la red, a través de protocolos como <strong>RIP</strong>, <strong>OSPF</strong> o <strong>EIGRP</strong>.</p>
+
+                <h5>Ventajas:</h5>
+                <ul>
+                    <li>Las rutas se ajustan automáticamente cuando un enlace falla o se vuelve inactivo, sin intervención manual.</li>
+                    <li>Es ideal para redes grandes donde la topología cambia frecuentemente.</li>
+                    <li>Utiliza algoritmos para elegir la mejor ruta en función de la situación actual de la red.</li>
+                </ul>
+
+                <h5>Desventajas:</h5>
+                <ul>
+                    <li>Consume más recursos, como CPU y memoria, y genera más tráfico debido a la constante actualización de las tablas de enrutamiento.</li>
+                    <li>Puede ser más complejo de configurar y administrar correctamente, especialmente en redes grandes.</li>
+                </ul>
+                <img src="EnrutamientoDinamico.png" alt="EnrDinam" style="max-width:100%; margin-bottom:1rem; border: 1px solid #ccc; border-radius: 8px;" />
+
+                <h3>Resumen</h3>
+                <p>En resumen, el enrutamiento estático es más adecuado para redes pequeñas y estables, mientras que el enrutamiento dinámico es más útil en redes grandes donde las condiciones cambian con frecuencia. Ambos enfoques tienen sus ventajas y desventajas, y la elección depende de las necesidades específicas de la red.</p>
+
             </div>
+
 
             <button onclick="toggleContent('nat')">5. El Guardián de la Máscara Única</button>
             <div id="nat" class="contenido">
-                <p>Este guardián simboliza el NAT (Traducción de Direcciones de Red). Permite que varios dispositivos compartan una sola IP pública, ocultando sus direcciones privadas. Beneficios: seguridad y ahorro de direcciones públicas.</p>
+                <p>En la última sala del templo, el guardián con dos caras representa el funcionamiento del <strong>NAT (Traducción de Direcciones de Red)</strong> en redes modernas. Esta técnica permite que múltiples dispositivos dentro de una red compartan una única dirección IP pública al comunicarse con el mundo exterior.</p>
+
+                <h3>¿Qué es NAT?</h3>
+                <p><strong>NAT</strong> es un mecanismo utilizado en redes para modificar las direcciones IP de los paquetes de datos mientras estos pasan a través de un dispositivo como un router o un firewall. Su principal objetivo es permitir que varios dispositivos dentro de una red local (como ordenadores, impresoras o teléfonos) compartan una única dirección IP pública cuando acceden a Internet. De esta forma, los dispositivos internos pueden comunicarse hacia el exterior sin necesidad de que cada uno tenga su propia IP pública.</p>
+
+                <h3>¿Cómo permite NAT que varios dispositivos compartan una única dirección?</h3>
+                <p>Cuando un dispositivo interno, como un PC, quiere enviar datos a Internet, el router realiza lo siguiente:</p>
+                <ul>
+                    <li>Cambia la dirección IP interna del dispositivo por su propia dirección IP pública antes de enviar el paquete.</li>
+                    <li>Cuando el mensaje regresa desde Internet, el router usa las tablas de NAT para identificar a qué dispositivo interno corresponde la solicitud y reenvía el paquete al dispositivo correcto.</li>
+                </ul>
+                <img src="Benef.png" alt="Benef" style="max-width:100%; margin-bottom:1rem; border: 1px solid #ccc; border-radius: 8px;" />
+
+                <h3>Beneficios de NAT:</h3>
+                <ul>
+                    <li><strong>Aislamiento de la red interna:</strong> Mejora la seguridad al actuar como una barrera entre la red interna y el mundo exterior.</li>
+                    <li><strong>Facilita el acceso remoto:</strong> Permite acceder a servicios internos desde el exterior mediante Port Forwarding, sin exponer toda la red.</li>
+                    <br>
+                    <li><strong>Uso eficiente de direcciones privadas:</strong> Facilita el uso de direcciones IP privadas dentro de la red local, lo que reduce la necesidad de direcciones IP públicas.</li>
+                    <br>
+                    <li><strong>Mejor control de tráfico:</strong> Permite a los administradores controlar y monitorear el tráfico saliente, facilitando la implementación de políticas de acceso.</li>
+                    <br>
+                    <li><strong>Reducción de costos:</strong> Al compartir una sola IP pública entre varios dispositivos, se reduce la necesidad de adquirir direcciones IP públicas adicionales.</li>
+                    <li><strong>Escalabilidad:</strong> Ofrece flexibilidad en redes crecientes, ya que no requiere nuevas IPs públicas a medida que más dispositivos se añaden.</li>
+                    <br>
+                    <li><strong>Mejor seguridad y privacidad:</strong> Oculta las direcciones IP internas, mejorando la protección de la red local.</li>
+                    <br>
+                    <li><strong>Transición a IPv6:</strong> Facilita la convivencia entre redes IPv4 e IPv6, permitiendo que ambos protocolos operen simultáneamente.</li>
+                    <br>
+                </ul>
             </div>
+
         </div>
     </section>
 
