@@ -32,7 +32,7 @@
             <div id="mural" class="contenido">
                 <p>Este ejercicio se refiere al modelo OSI. Cada franja representa una de sus capas:</p>
                 <p><strong>Introducción:</strong>El mural de las siete capas que se encuentra en la sala principal del templo simboliza el Modelo OSI (Interconexión de Sistemas Abiertos), una estructura conceptual que describe el proceso mediante el cual los datos se trasladan desde una aplicación en un dispositivo hasta otra aplicación en un dispositivo remoto. Esto lo deducimos del enunciado, que menciona que el mural está compuesto por siete franjas horizontales, y curiosamente, cada una representa un nivel distinto dentro de un proceso de comunicación, lo que coincide con las siete capas que transforman y procesan la información.
-                    <br>
+
                     <!-- Imagen del Modelo OSI -->
                 <img src="ModeloOsi.png" alt="Modelo OSI" style="max-width:100%; margin: 1rem 0; border-radius: 8px; border: 1px solid #ccc;" />
 
@@ -54,10 +54,63 @@
                 </ul>
             </div>
 
-            <button onclick="toggleContent('mensajeros')">2. Los Dos Pergaminos del Mensajero</button>
+            <button onclick="toggleContent('mensajeros')">Ejercicio 2: Los Dos Pergaminos del Mensajero</button>
             <div id="mensajeros" class="contenido">
-                <p>El mensajero confiable representa el protocolo TCP, mientras que el veloz representa UDP. TCP es fiable, orientado a conexión, pero más lento. UDP es más rápido, pero puede perder paquetes.</p>
+                <h3>Interpretación del Ejercicio: Los Dos Pergaminos del Mensajero</h3>
+                <p>El enunciado describe dos rituales: el Mensajero Confiable y el Mensajero Veloz. Cada uno representa diferentes enfoques de transmisión de datos, y se pide que los interpretes como protocolos de comunicación en redes modernas.</p>
+
+                <!-- Ritual del Mensajero Confiable -->
+                <h4>1. Ritual del Mensajero Confiable:</h4>
+                <h5>Protocolo equivalente: TCP (Transmission Control Protocol)</h5>
+                <p>El protocolo TCP es confiable y garantiza que los mensajes se entreguen correctamente, de manera similar al ritual del mensajero confiable que espera una confirmación.</p>
+
+                <ul>
+                    <li><strong>Características clave:</strong></li>
+                    <ul>
+                        <li>Establecimiento de conexión (similar a los "tres pasos de saludo").</li>
+                        <li>Confirmación de recepción (similar a la confirmación de entrega).</li>
+                        <li>Reintento de envío si no se recibe la confirmación (retransmisiones).</li>
+                    </ul>
+                    <li><strong>Ventajas de TCP:</strong></li>
+                    <ul>
+                        <li>Alta fiabilidad, asegurando que los datos lleguen correctamente.</li>
+                        <li>Garantiza el orden de los paquetes.</li>
+                    </ul>
+                    <li><strong>Desventajas de TCP:</strong></li>
+                    <ul>
+                        <li>Mayor latencia debido a la confirmación y retransmisión.</li>
+                        <li>Mayor consumo de ancho de banda debido al control de errores.</li>
+                    </ul>
+                </ul>
+                <img src="TcpUdp.png" alt="Comparativa TCP vs UDP" style="max-width:100%; margin: 2rem 0; border-radius: 8px; border: 1px solid #ccc;" />
+
+
+                <!-- Ritual del Mensajero Veloz -->
+                <h4>2. Ritual del Mensajero Veloz:</h4>
+                <h5>Protocolo equivalente: UDP (User Datagram Protocol)</h5>
+                <p>UDP es un protocolo más rápido pero menos confiable. No garantiza la entrega ni el orden de los paquetes, similar al mensajero veloz que entrega los mensajes sin esperar confirmación.</p>
+
+                <ul>
+                    <li><strong>Características clave:</strong></li>
+                    <ul>
+                        <li>Envío sin confirmación (como el mensajero veloz que no espera una respuesta).</li>
+                        <li>Menor sobrecarga de procesamiento (más rápido).</li>
+                    </ul>
+                    <li><strong>Ventajas de UDP:</strong></li>
+                    <ul>
+                        <li>Baja latencia, más rápido que TCP.</li>
+                        <li>Menor consumo de ancho de banda, ya que no hay retransmisiones ni confirmaciones.</li>
+                    </ul>
+                    <li><strong>Desventajas de UDP:</strong></li>
+                    <ul>
+                        <li>Menos confiabilidad, los datos pueden perderse o llegar fuera de orden.</li>
+                        <li>No tiene control de flujo ni control de errores.</li>
+                    </ul>
+                </ul>
+                <img src="ProsContras.png" alt="Pros y Contras de TCP y UDP" style="max-width:100%; margin: 2rem 0; border-radius: 8px; border: 1px solid #ccc;" />
+
             </div>
+
 
             <button onclick="toggleContent('subredes')">3. El Enigma de las Subredes</button>
             <div id="subredes" class="contenido">
