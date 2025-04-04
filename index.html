@@ -31,14 +31,25 @@
             <button onclick="toggleContent('mural')">1. El Mural de las Siete Capas</button>
             <div id="mural" class="contenido">
                 <p>Este ejercicio se refiere al modelo OSI. Cada franja representa una de sus capas:</p>
+
+                <!-- Imagen del Modelo OSI -->
+                <img src="ModeloOsi.png" alt="Modelo OSI" style="max-width:100%; margin: 1rem 0; border-radius: 8px; border: 1px solid #ccc;" />
+
+                <!-- Explicación de cada capa -->
                 <ul>
-                    <li><strong>Capa 7:</strong> Aplicación</li>
-                    <li><strong>Capa 6:</strong> Presentación</li>
-                    <li><strong>Capa 5:</strong> Sesión</li>
-                    <li><strong>Capa 4:</strong> Transporte</li>
-                    <li><strong>Capa 3:</strong> Red</li>
-                    <li><strong>Capa 2:</strong> Enlace de datos</li>
-                    <li><strong>Capa 1:</strong> Física</li>
+                    <li><strong>Capa 7 - Aplicación:</strong> Esta capa es la interfaz final para los usuarios. Aquí es donde se encuentran las aplicaciones que utilizan los usuarios, como navegadores web y clientes de correo electrónico.</li>
+                    <br>
+                    <li><strong>Capa 6 - Presentación:</strong> La capa de presentación traduce y formatea los datos para que sean comprensibles para la aplicación. Se encarga de la conversión de datos, como la codificación de imágenes o textos.</li>
+                    <br>
+                    <li><strong>Capa 5 - Sesión:</strong> La capa de sesión maneja las sesiones de comunicación entre dispositivos. Se asegura de que la comunicación entre aplicaciones continúe sin interrupciones, estableciendo, manteniendo y cerrando las sesiones.</li>
+                    <br>
+                    <li><strong>Capa 4 - Transporte:</strong> La capa de transporte garantiza la entrega confiable de datos. Se encarga de dividir los datos en paquetes y asegurar que lleguen correctamente al destino, utilizando protocolos como TCP y UDP.</li>
+                    <br>
+                    <li><strong>Capa 3 - Red:</strong> La capa de red se encarga de gestionar el enrutamiento de los datos entre redes. Los routers operan en esta capa para dirigir los datos a su destino final.</li>
+                    <br>
+                    <li><strong>Capa 2 - Enlace de Datos:</strong> La capa de enlace de datos asegura la transmisión de datos a través de enlaces físicos. Se encarga de la corrección de errores y el direccionamiento físico utilizando direcciones MAC.</li>
+                    <br>
+                    <li><strong>Capa 1 - Física:</strong> Esta es la capa fundamental para la transmisión de datos. Se ocupa de la transmisión de bits a través de un medio físico, como cables, fibras ópticas o señales inalámbricas.</li>
                 </ul>
             </div>
 
